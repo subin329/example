@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내비게이션 연습</title>
+  <style>
+    /*노멀라이즈: 초기화*, ul은 점을 가지고 있고 a는 밑줄과 색깔*/
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /*여백제거, ul은 점을 가지고 있음(공중에 떠있음)*/
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /*샵000000의 의미는 0-9까지가 아니고 16까지 표현 가능 000000검은색, 그래서 ffffff흰색,a는 밑줄과 색깔 */
+
+    /*nav*/
+    nav {
+      width: 100%;
+    }
+
+    /*위쪽 아래쪽 나뉘기에 생략해도 됨*/
+
+    .top-menu {
+      width: 100%;
+      min-width: 1200px;/*1200px이하로 줄어즐디 않음*/
+      background-color: #666;
+    }
+
+    .top-menu, .bottom {
+      width: 100%;
+      min-width: 1200px;/*1200px이하로 줄어즐디 않음*/
+      background-color: #666;
+    }
+
+  
+    /* nav 선택시 */
+    /*  .top-menu, nav .bottom {
+        width: 100%;
+        min-width: 1200px;/*1200px이하로 줄어즐지 않음 */
+    /*  background-color: #666;}
+    /*  .bottom-menu{
+        background-color: orange;
+    }
+    */
+
+    /* > 는 자식 선택자, .는 후선택자 띄어쓰기에 따라 달라짐*/
+    nav .container{
+      width: 1200px;
+      margin: 0 auto;/*블럭요소는 marjin:auto로 가운데 정렬합니다*/
+      outline: 1px solid red;
+    }
+    /*clearfix hack*/
+    .clear::after{/*가상요소*/
+      content: "";/*내용이 없는 빈 요소를 만들겠다는 것(가상요소를 만들 때 필수로 들어가야 함)*/
+      display: block;
+      clear:both;
+    }
+
+    .top-menu ul {
+      float: right;/*오른쪽 붙이기, 블록요소는 안에 있는 이미지 만큼 높이 차지, 클리어 픽셀로 사용 또는 clear:both*/
+
+    }
+
+    .top-menu li{
+      display: inline-block;
+      color: #fff;
+      padding: 10px 40px 10px 0;/*line-height으로 사용해도 됨*/
+      font-size: 18px;
+    }
+
+    /* .top-menu ul li{
+        float: left;} /*반대로 해야됨*/
+
+    /* alt + 방향키로 위치 이동 */
+    nav .bottom-menu{
+      background-color: orange;
+    }
+
+    .bottom-menu .logo{
+      font-size: 20px;
+      color: #fff;
+      float: left;
+      margin-left: 40px;
+      line-height: 80px;
+    }
+    .bottom-menu .gnb{
+      float: right;
+    }
+    .gnb > li{
+      margin-left: 45px;
+      float: left; /*padding으로 할경우 계산해서 넣어야 해서 번거로움*/
+      line-height: 80px;
+      color: #fff;
+      font-size: 189x;
+    }
+
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="top-menu">
+      <div class="container clear">
+        <ul class="login clear">
+          <li><a href="#">login</a></li>
+          <li><a href="#">join us</a></li>
+          <li><a href="#">member</a></li>
+        </ul>
+        <!-- <div style="clear:both;"></div> -->
+      </div>
+    </div>
+
+    <div class="bottom-menu">
+      <div class="container clear">
+        <div class="logo">
+          <a href="#">SHAMMAH</a>
+        </div>
+        <ul class="gnb">
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">NEWS</a></li>
+          <li><a href="#">FORTFOLIO</a></li>
+          <li><a href="#">BOARD</a></li>
+          <li><a href="#">ALBUM</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</body>
+
+</html>
